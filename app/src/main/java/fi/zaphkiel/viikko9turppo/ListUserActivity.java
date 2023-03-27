@@ -12,9 +12,7 @@ public class ListUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_user);
-    }
-    public void listUsers(View view) {
+        setContentView(R.layout.activity_main);
         ArrayList<User> userList = UserStorage.getInstance().getUserList();
         String firstName, lastName, eMail, degreeProgram;
 

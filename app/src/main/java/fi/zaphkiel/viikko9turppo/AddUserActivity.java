@@ -16,7 +16,7 @@ public class AddUserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adduser1);
+        setContentView(R.layout.activity_add_user);
         txtInput1 = findViewById(R.id.txtGivenName);
         txtInput2 = findViewById(R.id.txtFamilyName);
         txtInput3 = findViewById(R.id.txtEmailAddress);
