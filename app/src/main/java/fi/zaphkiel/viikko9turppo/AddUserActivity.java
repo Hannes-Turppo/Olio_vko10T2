@@ -1,6 +1,7 @@
 package fi.zaphkiel.viikko9turppo;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -8,6 +9,7 @@ import android.widget.RadioGroup;
 
 public class AddUserActivity extends AppCompatActivity {
 
+    private Context context;
     private EditText txtInput1;
     private EditText txtInput2;
     private EditText txtInput3;
@@ -20,9 +22,11 @@ public class AddUserActivity extends AppCompatActivity {
         txtInput1 = findViewById(R.id.txtGivenName);
         txtInput2 = findViewById(R.id.txtFamilyName);
         txtInput3 = findViewById(R.id.txtEmailAddress);
+        context = this;
     }
 
     public void addUser(View view) {
+
         RadioGroup rgDegreeProgram = findViewById(R.id.rgDegreeProgram);
 
         firstName = txtInput1.getText().toString();
@@ -45,5 +49,6 @@ public class AddUserActivity extends AppCompatActivity {
         }
         User user = new User(firstName, lastName, eMail, degreeProgram);
         UserStorage.getInstance().addUser(user);
+        UserStorage.getInstance().saveUserList(context);
     }
 }
